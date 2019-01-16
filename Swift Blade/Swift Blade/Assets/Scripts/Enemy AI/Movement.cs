@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 	
-	private Vector3 _newPosition;
+	public Vector3 _newPosition;
+	private Vector3 _speed;
+	public float acceleration = 5;
+	public float _maxSpeed = 200;
 	private Rigidbody _ship;
-	public float Speed = 40;
-	public float Timer = 0;
+	public float SmoothSpeed = 5;
+	private rotation _desiredRotation;
 
 	// Use this for initialization
 	void Start () {	
@@ -16,11 +19,19 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		_ship.MovePosition(transform.position + transform.forward * Time.deltaTime * Speed);
-		Timer -= 1 * Time.deltaTime;
-		if (Timer <= 0) {
-			_newPosition.Set(Random.Range(-90,90), Random.Range(-90,90), Random.Range(-90,90));
-			Timer = Random.Range(1,10);
+
+		//rotation is handled here
+
+		_desiredRotation = Quaternion.LookRotation(_newPosition - transform.position);
+		transform.rotation = Quaternion.Slerp(transfrom.rotation, _desiredRotation, SmoothSpeed * Time.deltatime);
+
+		//position is handled here
+
+		_speed += transform.forward * acceleration;
+		if (_speed.magnitude > _maxSpeed)
+		{
+			_speed += _speed.normalized * _maxSpeed
 		}
+		_ship.velocity = _speed;
 	}
 }
