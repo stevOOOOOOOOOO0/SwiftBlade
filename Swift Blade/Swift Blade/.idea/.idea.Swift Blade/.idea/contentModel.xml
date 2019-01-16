@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\10854794\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_Swift Blade.1394077435.00" t="ExcludeRecursive" />
-    <e p="F:\Swift Blade\Swift Blade" t="IncludeRecursive">
+    <e p="C:\Users\10854794\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_Swift Blade.-638830204.00" t="ExcludeRecursive" />
+    <e p="C:\Users\10854794\Documents\old project\SwiftBlade REpo\SwiftBlade\Swift Blade\Swift Blade" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Camera" t="Include">
             <e p="CameraFollow.cs" t="Include" />
+          </e>
+          <e p="Enemy AI" t="Include">
+            <e p="Movement.cs" t="Include" />
+            <e p="WaypointBehavior.cs" t="Include" />
           </e>
           <e p="Objects" t="Include">
             <e p="AsteroidMovement.cs" t="Include" />
