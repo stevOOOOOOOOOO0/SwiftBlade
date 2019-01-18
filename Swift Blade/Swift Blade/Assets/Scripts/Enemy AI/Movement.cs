@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour {
 	void Start () {	
 		_ship = GetComponent<Rigidbody>();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour {
 		else if (_speed != Vector3.zero)
 			_speed -= transform.forward * -_drag;
 		if (_speed.magnitude > _maxSpeed)
-			_speed = _speed.normalized * (_maxSpeed - 1);
+			_speed = _speed.normalized * _maxSpeed;
 		_ship.velocity = _speed;
 	}
 }
