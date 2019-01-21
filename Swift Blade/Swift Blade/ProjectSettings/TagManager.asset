@@ -6,6 +6,7 @@ TagManager:
   tags:
   - enemy
   - Astroid
+  - PlayerRotateAround
   layers:
   - Default
   - TransparentFX
