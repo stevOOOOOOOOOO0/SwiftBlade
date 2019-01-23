@@ -10,6 +10,7 @@ public class CameraFollow : MonoBehaviour
 	public float Offset = 15;
 	public float CameraRotateSpeed = 500;
 	private bool _freeRotate;
+	private Quaternion _desiredRotation;
 
 	void LateUpdate()
 	{
@@ -35,7 +36,9 @@ public class CameraFollow : MonoBehaviour
 		{
 			transform.RotateAround(Target.position, transform.right, Input.GetAxis("Mouse Y") * CameraRotateSpeed * Time.deltaTime);
 			transform.RotateAround(Target.position, transform.up, Input.GetAxis("Mouse X") * CameraRotateSpeed * Time.deltaTime);
-			transform.LookAt(Target, transform.up);
+			//transform.LookAt(Target, transform.up);
+			_desiredRotation = Quaternion.LookRotation(Target.position - transform.position);
+			transform.rotation = Quaternion.Slerp(transform.rotation, _desiredRotation, SmoothSpeed * Time.deltaTime);
 
 			_movement = Target.position - _oldPosition;
 			_oldPosition = Target.position;
