@@ -4,7 +4,6 @@ public class Shoot : MonoBehaviour
 {
 	public GameObject Bullet;
 	public GameObject Rocket;
-	public GameObject Target;
 	private bool _lockedOn = true;
 	private Vector3 positionBelow;
 	private Vector3 positionInFront;

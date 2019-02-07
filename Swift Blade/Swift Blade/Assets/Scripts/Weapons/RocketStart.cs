@@ -14,6 +14,8 @@ public class RocketStart : MonoBehaviour
 	private GameObject[] enemy;
 	public float MaxDist;
 	
+	public GameObject Explosion;
+	
 	// Use this for initialization
 	void Start () {
 		//_rocket = GetComponent<Rigidbody>();
@@ -52,6 +54,7 @@ public class RocketStart : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		
+		Instantiate(Explosion, transform.position, transform.rotation);
+		Destroy(gameObject);
 	}
 }

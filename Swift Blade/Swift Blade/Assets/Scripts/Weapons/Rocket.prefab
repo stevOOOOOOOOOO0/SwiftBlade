@@ -115,6 +115,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   Speed: 50
   MaxDist: 500
+  Explosion: {fileID: 1953529586980094, guid: c477a19a13a231842b03903d111c0378, type: 2}
 --- !u!136 &136415320304566368
 CapsuleCollider:
   m_ObjectHideFlags: 1

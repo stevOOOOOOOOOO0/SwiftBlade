@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13c0552f1e8094592cb9cc4e178242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RangeOfSpawn: 175
+  RangeOfSpawn: 200
 --- !u!136 &136960731747175632
 CapsuleCollider:
   m_ObjectHideFlags: 1
