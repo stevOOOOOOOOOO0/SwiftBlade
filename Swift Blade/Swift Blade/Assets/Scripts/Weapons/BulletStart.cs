@@ -11,6 +11,7 @@ public class BulletStart : MonoBehaviour
 	void Start () {
 		_bullet = GetComponent<Rigidbody>();
 		_bullet.velocity = transform.forward * 100;
+		
 	}
 	
 	// on collision object is destroyed

@@ -25,7 +25,6 @@ public class RocketStart : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-
 		if (targetFound)
 		{
 			_fracDistance = Speed / Vector3.Distance(transform.position, Target.position) * Time.deltaTime;
