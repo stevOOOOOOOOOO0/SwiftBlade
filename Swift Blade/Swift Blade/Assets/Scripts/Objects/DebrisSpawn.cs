@@ -19,6 +19,8 @@ public class DebrisSpawn : MonoBehaviour {
 		asteroid.velocity = randPosition;
 		transform.rotation = Random.rotation;
 	}
+	
+	
 
 	private void OnCollisionEnter(Collision other)
 	{

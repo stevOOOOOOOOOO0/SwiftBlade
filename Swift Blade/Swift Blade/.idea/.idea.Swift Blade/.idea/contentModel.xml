@@ -17,7 +17,9 @@
             <e p="AsteroidMovement.cs" t="Include" />
             <e p="AsteroidSpawn.cs" t="Include" />
             <e p="DebrisSpawn.cs" t="Include" />
-            <e p="ExplosionStart.cs" t="Include" />
+            <e p="Explosion" t="Include">
+              <e p="ExplosionStart.cs" t="Include" />
+            </e>
           </e>
           <e p="Player" t="Include">
             <e p="BasicMovement.cs" t="Include" />

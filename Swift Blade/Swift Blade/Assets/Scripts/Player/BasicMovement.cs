@@ -18,6 +18,7 @@ public class BasicMovement : MonoBehaviour
 	private Vector3 newmove;
 	public float KnockBackSpeed = 50;
 	private bool _knockBack = false;
+	private bool _outside = false;
 
 	// Use this for initialization
 	void Start ()
@@ -28,30 +29,21 @@ public class BasicMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetAxis("Rotation") != 0)
-		{
-			_controller.transform.Rotate(0, 0, Input.GetAxis("Rotation") * RotationSpeed * Time.deltaTime);
-		}
-
-		if (Input.GetAxis("Lift") != 0)
-		{
-			_controller.transform.Rotate(Input.GetAxis("Lift") * LiftSpeed * Time.deltaTime, 0, 0);
-		}
-
-		if (Input.GetAxis("Drift") != 0)
-		{
-			_controller.transform.Rotate(0, Input.GetAxis("Drift") * DriftSpeed * Time.deltaTime, 0);
-		}
+			//_controller.transform.Rotate(Input.GetAxis("Lift") * LiftSpeed * Time.deltaTime, Input.GetAxis("Drift") * DriftSpeed * Time.deltaTime, Input.GetAxis("Rotation") * RotationSpeed * Time.deltaTime);
 		
-		if (_knockBack == false)
+		if (_knockBack == false && _outside == false)
 		{
-
-			if (Input.GetAxis("Accelerator") != 0)
-			{
-				Speed = Speed + Input.GetAxis("Accelerator") * AccelerationSpeed * Time.deltaTime;
-			}
-
+			_controller.transform.Rotate(
+				Input.GetAxis("Lift") * LiftSpeed * Time.deltaTime,
+				Input.GetAxis("Drift") * DriftSpeed * Time.deltaTime,
+				Input.GetAxis("Rotation") * RotationSpeed * Time.deltaTime);
+			Speed = Speed + Input.GetAxis("Accelerator") * AccelerationSpeed * Time.deltaTime;
 			_controller.Move(_controller.transform.forward * Speed * Time.deltaTime);
+		}
+		else if (_outside)
+		{
+			_controller.transform.Rotate(transform.right * LiftSpeed * Time.deltaTime * -1);
+			Speed = Speed + Input.GetAxis("Accelerator") * AccelerationSpeed * Time.deltaTime;
 		}
 		else
 		{
@@ -71,5 +63,10 @@ public class BasicMovement : MonoBehaviour
 		newmove = (capsule.transform.position - _controller.transform.position) * -1;
 		_controller.Move(newmove * KnockBackSpeed * Time.deltaTime);
 		_knockBack = true;
+
+		if (capsule.tag == "Bounds")
+		{
+			_outside = true;
+		}
 	}
 }

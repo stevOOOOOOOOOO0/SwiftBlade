@@ -33,23 +33,6 @@ public class Movement : MonoBehaviour {
 			_newPosition.Set(Random.Range(-RangeOfSpawn, RangeOfSpawn), Random.Range(-RangeOfSpawn, RangeOfSpawn), Random.Range(-RangeOfSpawn, RangeOfSpawn));
 			_timer = 0;
 		}
-
-
-
-		/*//rotation is handled here
-		_desiredRotation = Quaternion.LookRotation(_newPosition.position - transform.position);
-		transform.rotation = Quaternion.Slerp(transform.rotation, _desiredRotation, SmoothSpeed * Time.deltaTime);
-
-		//position is handled here
-		if (Vector3.Distance(transform.position, _newPosition.position) < 50 || Vector3.Distance(transform.position, _newPosition.position) > 70)
-		{
-			print("in it");
-			_ship.MovePosition(transform.forward);
-		}
-		else
-		{
-			transform.RotateAround(_newPosition.position, Vector3.up, Speed * Time.deltaTime);
-		}*/
-		print("Distance: " + Vector3.Distance(transform.position, _newPosition));
+		//print("Distance: " + Vector3.Distance(transform.position, _newPosition));
 	}
 }
