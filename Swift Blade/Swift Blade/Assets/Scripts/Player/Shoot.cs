@@ -7,7 +7,7 @@ public class Shoot : MonoBehaviour
 	private bool _lockedOn = true;
 	private Vector3 positionBelow;
 	private Vector3 positionInFront;
-	private bool _weaponOne = true;
+	public bool _weaponOne = true;
 	private float _timer = 5;
 
 	void Start()
@@ -26,7 +26,8 @@ public class Shoot : MonoBehaviour
 
 		_timer += 1 * Time.deltaTime;
 		// find a target to lock on to
-
+		
+		
 		if (_lockedOn && Input.GetMouseButtonDown(0) && !_weaponOne && _timer > 3)
 		{
 			Instantiate(Rocket, transform.position + positionBelow, transform.rotation);

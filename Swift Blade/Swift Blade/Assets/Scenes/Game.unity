@@ -972,6 +972,12 @@ MonoBehaviour:
   Asteroid: {fileID: 1575404225508356, guid: 7e7de34e129c9934aad78433db4dce5f, type: 2}
   Triangle_Debris: {fileID: 1837235938928980, guid: a95621cf3c8b18b4fae017d9f279fa60,
     type: 2}
+  TriangleSmall: {fileID: 1837235938928980, guid: a95621cf3c8b18b4fae017d9f279fa60,
+    type: 2}
+  Cylinder: {fileID: 1837235938928980, guid: a95621cf3c8b18b4fae017d9f279fa60, type: 2}
+  Panel: {fileID: 1837235938928980, guid: a95621cf3c8b18b4fae017d9f279fa60, type: 2}
+  SataliteBase: {fileID: 1837235938928980, guid: a95621cf3c8b18b4fae017d9f279fa60,
+    type: 2}
 --- !u!4 &1037541958
 Transform:
   m_ObjectHideFlags: 0
@@ -2224,6 +2230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1903263206807258, guid: a1915827340bed541a20fc62ff687f57, type: 2}
   Rocket: {fileID: 1903263206807258, guid: bb5f3900f9c44e540bb326b9dd955c16, type: 2}
+  _weaponOne: 1
 --- !u!143 &1852810900
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2507,7 +2514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2065049105
 Transform:
   m_ObjectHideFlags: 0
