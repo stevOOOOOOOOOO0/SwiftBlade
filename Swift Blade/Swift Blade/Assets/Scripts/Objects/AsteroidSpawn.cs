@@ -30,7 +30,9 @@ public class AsteroidSpawn : MonoBehaviour
 
 		for (int j = 0; j < 25; j++)
 		{
+				//selects the type of debris that will spawn
 			ChooseType();
+				//switch between the different types of debris to spawn them
 			switch (Debris)
 			{
 				case DebrisType.TriangleLarge:
