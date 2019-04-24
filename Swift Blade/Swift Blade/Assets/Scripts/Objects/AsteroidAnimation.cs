@@ -14,7 +14,6 @@ public class AsteroidAnimation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		anim.speed = 0.5f + increase;
-		increase += Time.deltaTime * (.1f/2);
+		anim.speed += Time.deltaTime * (.1f/2);
 	}
 }

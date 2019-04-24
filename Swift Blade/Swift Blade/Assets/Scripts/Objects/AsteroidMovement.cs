@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class AsteroidMovement : MonoBehaviour
 {
-
+	public Animator anim;
 	private Rigidbody asteroid;
 	public float RangeOfSpawn = 200;
 	
 	// Use this for initialization
 	void Start ()
 	{
+		anim = GetComponent<Animator>();
 		Vector3 randPosition = new Vector3();
 		randPosition.Set(Random.Range(-RangeOfSpawn,RangeOfSpawn), Random.Range(-RangeOfSpawn,RangeOfSpawn), Random.Range(-RangeOfSpawn,RangeOfSpawn));
 		transform.position = randPosition;
@@ -25,5 +26,6 @@ public class AsteroidMovement : MonoBehaviour
 	{
 		asteroid = GetComponent<Rigidbody>();
 		asteroid.velocity *= -1;
+		anim.speed += .5f;
 	}
 }
