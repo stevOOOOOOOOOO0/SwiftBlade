@@ -10,10 +10,13 @@
             <e p="CameraFollow.cs" t="Include" />
           </e>
           <e p="Enemy AI" t="Include">
+            <e p="BakedMeshMovement.cs" t="Include" />
             <e p="Movement.cs" t="Include" />
+            <e p="NavMeshMovement.cs" t="Include" />
             <e p="WaypointBehavior.cs" t="Include" />
           </e>
           <e p="Objects" t="Include">
+            <e p="AsteroidAnimation.cs" t="Include" />
             <e p="AsteroidMovement.cs" t="Include" />
             <e p="AsteroidSpawn.cs" t="Include" />
             <e p="DebrisSpawn.cs" t="Include" />
@@ -32,10 +35,13 @@
           </e>
         </e>
       </e>
+      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="Swift Blade.sln" t="IncludeFlat" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
     </e>
   </component>
 </project>
