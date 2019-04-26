@@ -19,6 +19,7 @@ public class BasicMovement : MonoBehaviour
 	public float KnockBackSpeed = 50;
 	private bool _knockBack = false;
 	private bool _outside = false;
+        Private float timer = 0f;
 
 	// Use this for initialization
 	void Start ()
@@ -44,6 +45,10 @@ public class BasicMovement : MonoBehaviour
 		{
 			_controller.transform.Rotate(transform.right * LiftSpeed * Time.deltaTime * -1);
 			Speed = Speed + Input.GetAxis("Accelerator") * AccelerationSpeed * Time.deltaTime;
+                        timer += 1 * Time.deltaTime;
+                        if (timer >= 2)
+                              _outside = false;
+                        timer = 0
 		}
 		else
 		{
