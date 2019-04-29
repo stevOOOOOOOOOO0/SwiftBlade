@@ -5,8 +5,11 @@ using UnityEngine;
 public class BakedMeshMovement : MonoBehaviour {
 
 	public Transform Target;
+	private Vector3 finalDestination;
 	public float Range;
 	private bool tracking = false;
+	public float Speed;
+	private float distanceTraveled;
 	
 	// Use this for initialization
 	void Start () {
@@ -17,14 +20,15 @@ public class BakedMeshMovement : MonoBehaviour {
 	void Update () {
 		if (tracking)
 		{
-			transform.position.Set(transform.position.x, Target.position.y, transform.position.z);
-			print("double yes");
+			print("position before" + Target.position.y);
+			finalDestination.Set(transform.position.x, Target.position.y, transform.position.z);
+			distanceTraveled = Speed * Time.deltaTime;
+			transform.position = Vector3.Lerp(transform.position, finalDestination, distanceTraveled/Vector3.Distance(transform.position, finalDestination));
 			return;
 		}
 		
 		else if (Vector3.Distance(Target.position, transform.position) < Range)
 		{
-			transform.position.Set(0, Target.position.y, 0);
 			tracking = true;
 			print("got em");
 		}

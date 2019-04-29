@@ -56,7 +56,7 @@ public class AsteroidSpawn : MonoBehaviour
 
 	public void ChooseType()
 	{
-		Rand = Random.Range(1, 5);
+		Rand = Random.Range(1, 6);
 		switch (Rand)
 		{
 			case 1:

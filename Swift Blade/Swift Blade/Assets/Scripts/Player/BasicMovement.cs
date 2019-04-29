@@ -19,12 +19,14 @@ public class BasicMovement : MonoBehaviour
 	public float KnockBackSpeed = 50;
 	private bool _knockBack = false;
 	private bool _outside = false;
-        Private float timer = 0f;
+        private float timer = 0;
+	public FloatData Fuel;
 
 	// Use this for initialization
 	void Start ()
 	{
 		_controller = GetComponent<CharacterController>();
+		transform.position.Set(0,0,0);
 	}
 	
 	// Update is called once per frame
@@ -48,7 +50,7 @@ public class BasicMovement : MonoBehaviour
                         timer += 1 * Time.deltaTime;
                         if (timer >= 2)
                               _outside = false;
-                        timer = 0
+                        timer = 0;
 		}
 		else
 		{
@@ -64,14 +66,23 @@ public class BasicMovement : MonoBehaviour
 
 	void OnTriggerEnter(Collider capsule)
 	{
+		if (capsule.tag == "Refill")
+		{
+			Fuel.Value += 25;
+			return;
+		}
+		else if (capsule.tag == "Bounds")
+		{
+			_outside = true;
+		}
+		else if (capsule.tag == "enemy")
+		{
+			Fuel.Value -= 10;
+		}
 		KnockBackSpeed = Speed / 6;
 		newmove = (capsule.transform.position - _controller.transform.position) * -1;
 		_controller.Move(newmove * KnockBackSpeed * Time.deltaTime);
 		_knockBack = true;
 
-		if (capsule.tag == "Bounds")
-		{
-			_outside = true;
-		}
 	}
 }

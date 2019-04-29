@@ -8,6 +8,7 @@ TagManager:
   - Astroid
   - PlayerRotateAround
   - Bounds
+  - Refill
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - PostProcessing
   - Enemy
   - Player
-  - 
+  - Weapons
   - 
   - 
   - 
